@@ -1,0 +1,351 @@
+/* Base Pagination Styles */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Base Button Styles */
+.pageButton,
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.16px;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.pageButton:focus,
+.navButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.pageButton:active,
+.navButton:active {
+  transform: translateY(1px);
+}
+
+/* Navigation Icon */
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Size Variants - Small */
+.pagination--small .pageButton,
+.pagination--small .navButton {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.pagination--small .navIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Size Variants - Medium */
+.pagination--medium .pageButton,
+.pagination--medium .navButton {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.pagination--medium .navIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Size Variants - Large */
+.pagination--large .pageButton,
+.pagination--large .navButton {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.pagination--large .navIcon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Primary Variant - Light Theme */
+.pagination--primary.pagination--light .pageButton {
+  background-color: #ffffff;
+  color: #777777;
+  border: 1px solid transparent;
+}
+
+.pagination--primary.pagination--light .pageButton:hover {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+.pagination--primary.pagination--light .pageButton--active {
+  background-color: #f2f2f2;
+  color: #000000;
+  font-weight: 500;
+}
+
+.pagination--primary.pagination--light .navButton {
+  background-color: transparent;
+  color: #777777;
+}
+
+.pagination--primary.pagination--light .navButton:hover:not(.navButton--disabled) {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+/* Primary Variant - Dark Theme */
+.pagination--primary.pagination--dark .pageButton {
+  background-color: #2a2a2a;
+  color: #a0a0a0;
+  border: 1px solid transparent;
+}
+
+.pagination--primary.pagination--dark .pageButton:hover {
+  background-color: #3a3a3a;
+  color: #cccccc;
+}
+
+.pagination--primary.pagination--dark .pageButton--active {
+  background-color: #404040;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.pagination--primary.pagination--dark .navButton {
+  background-color: transparent;
+  color: #a0a0a0;
+}
+
+.pagination--primary.pagination--dark .navButton:hover:not(.navButton--disabled) {
+  background-color: #3a3a3a;
+  color: #cccccc;
+}
+
+/* Secondary Variant - Light Theme */
+.pagination--secondary.pagination--light .pageButton {
+  background-color: transparent;
+  color: #666666;
+  border: 1px solid #e0e0e0;
+}
+
+.pagination--secondary.pagination--light .pageButton:hover {
+  background-color: #f8f8f8;
+  color: #333333;
+  border-color: #d0d0d0;
+}
+
+.pagination--secondary.pagination--light .pageButton--active {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 500;
+  border-color: #000000;
+}
+
+.pagination--secondary.pagination--light .navButton {
+  background-color: transparent;
+  color: #666666;
+  border: 1px solid #e0e0e0;
+}
+
+.pagination--secondary.pagination--light .navButton:hover:not(.navButton--disabled) {
+  background-color: #f8f8f8;
+  color: #333333;
+  border-color: #d0d0d0;
+}
+
+/* Secondary Variant - Dark Theme */
+.pagination--secondary.pagination--dark .pageButton {
+  background-color: transparent;
+  color: #a0a0a0;
+  border: 1px solid #404040;
+}
+
+.pagination--secondary.pagination--dark .pageButton:hover {
+  background-color: #2a2a2a;
+  color: #cccccc;
+  border-color: #606060;
+}
+
+.pagination--secondary.pagination--dark .pageButton--active {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 500;
+  border-color: #ffffff;
+}
+
+.pagination--secondary.pagination--dark .navButton {
+  background-color: transparent;
+  color: #a0a0a0;
+  border: 1px solid #404040;
+}
+
+.pagination--secondary.pagination--dark .navButton:hover:not(.navButton--disabled) {
+  background-color: #2a2a2a;
+  color: #cccccc;
+  border-color: #606060;
+}
+
+/* Tertiary Variant - Light Theme */
+.pagination--tertiary.pagination--light .pageButton {
+  background-color: transparent;
+  color: #888888;
+  border: 1px solid transparent;
+}
+
+.pagination--tertiary.pagination--light .pageButton:hover {
+  background-color: #f5f5f5;
+  color: #555555;
+}
+
+.pagination--tertiary.pagination--light .pageButton--active {
+  background-color: #e8e8e8;
+  color: #222222;
+  font-weight: 500;
+}
+
+.pagination--tertiary.pagination--light .navButton {
+  background-color: transparent;
+  color: #888888;
+}
+
+.pagination--tertiary.pagination--light .navButton:hover:not(.navButton--disabled) {
+  background-color: #f5f5f5;
+  color: #555555;
+}
+
+/* Tertiary Variant - Dark Theme */
+.pagination--tertiary.pagination--dark .pageButton {
+  background-color: transparent;
+  color: #888888;
+  border: 1px solid transparent;
+}
+
+.pagination--tertiary.pagination--dark .pageButton:hover {
+  background-color: #2a2a2a;
+  color: #bbbbbb;
+}
+
+.pagination--tertiary.pagination--dark .pageButton--active {
+  background-color: #404040;
+  color: #dddddd;
+  font-weight: 500;
+}
+
+.pagination--tertiary.pagination--dark .navButton {
+  background-color: transparent;
+  color: #888888;
+}
+
+.pagination--tertiary.pagination--dark .navButton:hover:not(.navButton--disabled) {
+  background-color: #2a2a2a;
+  color: #bbbbbb;
+}
+
+/* Disabled State */
+.pageButton--disabled,
+.navButton--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.pageButton--disabled:hover,
+.pageButton--disabled:active,
+.pageButton--disabled:focus,
+.navButton--disabled:hover,
+.navButton--disabled:active,
+.navButton--disabled:focus {
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .pagination {
+    gap: 4px;
+  }
+  
+  .pageNumbers {
+    gap: 4px;
+  }
+
+  .pagination--small .pageButton,
+  .pagination--small .navButton {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .pagination--medium .pageButton,
+  .pagination--medium .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .pagination--large .pageButton,
+  .pagination--large .navButton {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .pageButton,
+  .navButton {
+    border-width: 2px;
+  }
+
+  .pageButton--active {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .pageButton,
+  .navButton,
+  .navIcon {
+    transition: none;
+  }
+}
