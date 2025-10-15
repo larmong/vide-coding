@@ -91,7 +91,7 @@ export const EMOTION_LIST = Object.values(EMOTIONS);
 
 // ============= UTILITY TYPES =============
 export type EmotionType = keyof typeof EMOTION_TYPES;
-export type EmotionValue = typeof EMOTION_TYPES[EmotionType];
+export type EmotionValue = (typeof EMOTION_TYPES)[EmotionType];
 
 // ============= UTILITY FUNCTIONS =============
 
@@ -127,9 +127,7 @@ export const getEmotionIcon = (type: EmotionType, size: 'medium' | 'small' = 'me
  * Emotion 문자열 값으로 타입을 찾습니다
  */
 export const getEmotionTypeByValue = (value: string): EmotionType | null => {
-  const type = (Object.keys(EMOTION_TYPES) as EmotionType[]).find(
-    (key) => EMOTION_TYPES[key] === value
-  );
+  const type = (Object.keys(EMOTION_TYPES) as EmotionType[]).find((key) => EMOTION_TYPES[key] === value);
   return type || null;
 };
 
@@ -137,9 +135,7 @@ export const getEmotionTypeByValue = (value: string): EmotionType | null => {
  * Emotion 라벨로 타입을 찾습니다
  */
 export const getEmotionTypeByLabel = (label: string): EmotionType | null => {
-  const type = (Object.keys(EMOTIONS) as EmotionType[]).find(
-    (key) => EMOTIONS[key].label === label
-  );
+  const type = (Object.keys(EMOTIONS) as EmotionType[]).find((key) => EMOTIONS[key].label === label);
   return type || null;
 };
 
@@ -152,4 +148,3 @@ export const ENUM = {
 
 // Default export
 export default ENUM;
-
