@@ -1,0 +1,579 @@
+/* Base Searchbar Styles */
+.container {
+  position: relative;
+  width: 100%;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputWrapper:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inputWrapper:focus-within {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Field */
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.input::placeholder {
+  transition: color 0.2s ease-in-out;
+}
+
+.input:focus::placeholder {
+  opacity: 0.7;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Icon Wrappers */
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.defaultSearchIcon,
+.defaultClearIcon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.loadingIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Clear Button */
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.clearButton:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.clearButton:active {
+  transform: scale(0.95);
+}
+
+/* Search Button */
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.searchButton:hover {
+  transform: translateY(-1px);
+}
+
+.searchButton:active {
+  transform: translateY(0);
+}
+
+.searchButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Suggestion List */
+.suggestionList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.suggestionItem {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.suggestionItem:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.suggestionItem:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Size Variants */
+.inputWrapper--small {
+  height: 36px;
+  padding: 6px 12px;
+  gap: 8px;
+}
+
+.inputWrapper--small .input {
+  font-size: 14px;
+}
+
+.inputWrapper--small .defaultSearchIcon,
+.inputWrapper--small .defaultClearIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.inputWrapper--small .clearButton {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+
+.inputWrapper--small .searchButton {
+  padding: 6px 12px;
+  font-size: 12px;
+  min-width: 60px;
+}
+
+.inputWrapper--medium {
+  height: 48px;
+  padding: 12px 16px;
+  gap: 12px;
+}
+
+.inputWrapper--medium .input {
+  font-size: 16px;
+}
+
+.inputWrapper--medium .defaultSearchIcon,
+.inputWrapper--medium .defaultClearIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.inputWrapper--medium .clearButton {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+}
+
+.inputWrapper--medium .searchButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-width: 80px;
+}
+
+.inputWrapper--large {
+  height: 56px;
+  padding: 16px 20px;
+  gap: 16px;
+}
+
+.inputWrapper--large .input {
+  font-size: 18px;
+}
+
+.inputWrapper--large .defaultSearchIcon,
+.inputWrapper--large .defaultClearIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.inputWrapper--large .clearButton {
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+}
+
+.inputWrapper--large .searchButton {
+  padding: 12px 20px;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+/* Primary Variant - Light Theme */
+.inputWrapper--primary.inputWrapper--light {
+  background-color: #ffffff;
+  border-color: #d4d3d3;
+  color: #1c1c1c;
+}
+
+.inputWrapper--primary.inputWrapper--light .input::placeholder {
+  color: #919191;
+}
+
+.inputWrapper--primary.inputWrapper--light:hover {
+  border-color: #ababab;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inputWrapper--primary.inputWrapper--light.inputWrapper--focused {
+  border-color: #3a5cf3;
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.1), 0 4px 12px rgba(58, 92, 243, 0.15);
+}
+
+.inputWrapper--primary.inputWrapper--light .searchButton {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.inputWrapper--primary.inputWrapper--light .searchButton:hover {
+  background-color: #333333;
+}
+
+.container--light .suggestionList {
+  background-color: #ffffff;
+  border-color: #d4d3d3;
+  color: #1c1c1c;
+}
+
+.container--light .suggestionItem:hover {
+  background-color: #f2f2f2;
+}
+
+/* Primary Variant - Dark Theme */
+.inputWrapper--primary.inputWrapper--dark {
+  background-color: #333333;
+  border-color: #5f5f5f;
+  color: #ffffff;
+}
+
+.inputWrapper--primary.inputWrapper--dark .input::placeholder {
+  color: #c7c7c7;
+}
+
+.inputWrapper--primary.inputWrapper--dark:hover {
+  border-color: #777777;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.inputWrapper--primary.inputWrapper--dark.inputWrapper--focused {
+  border-color: #6da5fa;
+  box-shadow: 0 0 0 3px rgba(109, 165, 250, 0.2), 0 4px 12px rgba(109, 165, 250, 0.15);
+}
+
+.inputWrapper--primary.inputWrapper--dark .searchButton {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.inputWrapper--primary.inputWrapper--dark .searchButton:hover {
+  background-color: #f0f0f0;
+}
+
+.container--dark .suggestionList {
+  background-color: #333333;
+  border-color: #5f5f5f;
+  color: #ffffff;
+}
+
+.container--dark .suggestionItem:hover {
+  background-color: #404040;
+}
+
+/* Secondary Variant - Light Theme */
+.inputWrapper--secondary.inputWrapper--light {
+  background-color: transparent;
+  border-color: #000000;
+  color: #000000;
+}
+
+.inputWrapper--secondary.inputWrapper--light .input::placeholder {
+  color: #777777;
+}
+
+.inputWrapper--secondary.inputWrapper--light:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inputWrapper--secondary.inputWrapper--light.inputWrapper--focused {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-color: #3a5cf3;
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.1), 0 4px 12px rgba(58, 92, 243, 0.15);
+}
+
+.inputWrapper--secondary.inputWrapper--light .searchButton {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.inputWrapper--secondary.inputWrapper--light .searchButton:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Secondary Variant - Dark Theme */
+.inputWrapper--secondary.inputWrapper--dark {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.inputWrapper--secondary.inputWrapper--dark .input::placeholder {
+  color: #a0a0a0;
+}
+
+.inputWrapper--secondary.inputWrapper--dark:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.inputWrapper--secondary.inputWrapper--dark.inputWrapper--focused {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #6da5fa;
+  box-shadow: 0 0 0 3px rgba(109, 165, 250, 0.2), 0 4px 12px rgba(109, 165, 250, 0.15);
+}
+
+.inputWrapper--secondary.inputWrapper--dark .searchButton {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.inputWrapper--secondary.inputWrapper--dark .searchButton:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Tertiary Variant - Light Theme */
+.inputWrapper--tertiary.inputWrapper--light {
+  background-color: #f2f2f2;
+  border-color: transparent;
+  color: #1c1c1c;
+}
+
+.inputWrapper--tertiary.inputWrapper--light .input::placeholder {
+  color: #777777;
+}
+
+.inputWrapper--tertiary.inputWrapper--light:hover {
+  background-color: #e4e4e4;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inputWrapper--tertiary.inputWrapper--light.inputWrapper--focused {
+  background-color: #ffffff;
+  border-color: #3a5cf3;
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.1), 0 4px 12px rgba(58, 92, 243, 0.15);
+}
+
+.inputWrapper--tertiary.inputWrapper--light .searchButton {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+.inputWrapper--tertiary.inputWrapper--light .searchButton:hover {
+  background-color: #000000;
+}
+
+/* Tertiary Variant - Dark Theme */
+.inputWrapper--tertiary.inputWrapper--dark {
+  background-color: #2a2a2a;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.inputWrapper--tertiary.inputWrapper--dark .input::placeholder {
+  color: #a0a0a0;
+}
+
+.inputWrapper--tertiary.inputWrapper--dark:hover {
+  background-color: #404040;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+.inputWrapper--tertiary.inputWrapper--dark.inputWrapper--focused {
+  background-color: #333333;
+  border-color: #6da5fa;
+  box-shadow: 0 0 0 3px rgba(109, 165, 250, 0.2), 0 4px 12px rgba(109, 165, 250, 0.15);
+}
+
+.inputWrapper--tertiary.inputWrapper--dark .searchButton {
+  background-color: #a0a0a0;
+  color: #000000;
+}
+
+.inputWrapper--tertiary.inputWrapper--dark .searchButton:hover {
+  background-color: #ffffff;
+}
+
+/* Error State */
+.inputWrapper--error {
+  border-color: #f03851 !important;
+  box-shadow: 0 0 0 3px rgba(240, 56, 81, 0.1) !important;
+}
+
+.inputWrapper--error:hover {
+  border-color: #e4112e !important;
+  box-shadow: 0 0 0 3px rgba(228, 17, 46, 0.1), 0 4px 12px rgba(228, 17, 46, 0.15) !important;
+}
+
+/* Disabled State */
+.inputWrapper--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.inputWrapper--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading State */
+.inputWrapper--loading {
+  cursor: wait;
+}
+
+.inputWrapper--loading .input {
+  opacity: 0.7;
+}
+
+/* Focus States */
+.inputWrapper--focused {
+  transform: translateY(-1px);
+}
+
+/* Container with Suggestions */
+.container--with-suggestions {
+  z-index: 1000;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .inputWrapper--small {
+    height: 38px;
+    padding: 7px 14px;
+  }
+
+  .inputWrapper--medium {
+    height: 44px;
+    padding: 10px 18px;
+  }
+
+  .inputWrapper--large {
+    height: 52px;
+    padding: 14px 22px;
+  }
+
+  .suggestionList {
+    max-height: 250px;
+  }
+
+  .suggestionItem {
+    padding: 14px 18px;
+    font-size: 16px; /* iOS에서 줌 방지 */
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .inputWrapper {
+    border-width: 2px;
+  }
+
+  .inputWrapper--focused {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .inputWrapper,
+  .clearButton,
+  .searchButton,
+  .suggestionItem {
+    transition: none;
+  }
+
+  .loadingIcon {
+    animation: none;
+  }
+}
+
+/* Dark mode system preference */
+@media (prefers-color-scheme: dark) {
+  .suggestionList {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}

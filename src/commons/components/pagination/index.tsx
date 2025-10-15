@@ -76,32 +76,34 @@ const Pagination: React.FC<PaginationProps> = ({
     .filter(Boolean)
     .join(' ');
 
-  const buttonClasses = (isActive: boolean, isDisabled: boolean = false) => [
-    styles.pageButton,
-    styles[`pageButton--${variant}`],
-    styles[`pageButton--${size}`],
-    styles[`pageButton--${theme}`],
-    isActive && styles['pageButton--active'],
-    (isDisabled || disabled) && styles['pageButton--disabled'],
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const buttonClasses = (isActive: boolean, isDisabled: boolean = false) =>
+    [
+      styles.pageButton,
+      styles[`pageButton--${variant}`],
+      styles[`pageButton--${size}`],
+      styles[`pageButton--${theme}`],
+      isActive && styles['pageButton--active'],
+      (isDisabled || disabled) && styles['pageButton--disabled'],
+    ]
+      .filter(Boolean)
+      .join(' ');
 
-  const navButtonClasses = (isDisabled: boolean = false) => [
-    styles.navButton,
-    styles[`navButton--${variant}`],
-    styles[`navButton--${size}`],
-    styles[`navButton--${theme}`],
-    (isDisabled || disabled) && styles['navButton--disabled'],
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const navButtonClasses = (isDisabled: boolean = false) =>
+    [
+      styles.navButton,
+      styles[`navButton--${variant}`],
+      styles[`navButton--${size}`],
+      styles[`navButton--${theme}`],
+      (isDisabled || disabled) && styles['navButton--disabled'],
+    ]
+      .filter(Boolean)
+      .join(' ');
 
   // 페이지 범위 계산
   const getPageRange = () => {
     let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
     const endPage = Math.min(totalPages, startPage + maxVisible - 1);
-    
+
     if (endPage - startPage < maxVisible - 1) {
       startPage = Math.max(1, endPage - maxVisible + 1);
     }
@@ -153,10 +155,7 @@ const Pagination: React.FC<PaginationProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             className={styles.navIcon}
           >
-            <path
-              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-              fill="currentColor"
-            />
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor" />
           </svg>
         </button>
       )}
@@ -193,10 +192,7 @@ const Pagination: React.FC<PaginationProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             className={styles.navIcon}
           >
-            <path
-              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-              fill="currentColor"
-            />
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor" />
           </svg>
         </button>
       )}
