@@ -1,0 +1,355 @@
+/* ============= CONTAINER ============= */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ============= LABEL ============= */
+.label {
+  font-family: var(--font-family-korean, 'Pretendard Variable');
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  color: var(--color-text-primary, #1c1c1c);
+}
+
+.container--dark .label {
+  color: var(--color-text-primary, #ffffff);
+}
+
+/* ============= INPUT WRAPPER ============= */
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid;
+  transition: all 0.2s ease;
+  background-color: var(--color-bg-primary, #ffffff);
+}
+
+/* Wrapper Variants */
+.inputWrapper--primary {
+  border-color: var(--color-border-primary, #d4d3d3);
+}
+
+.inputWrapper--secondary {
+  border-color: var(--color-border-secondary, #c7c7c7);
+}
+
+.inputWrapper--tertiary {
+  border-color: transparent;
+  background-color: var(--color-bg-secondary, #f2f2f2);
+}
+
+/* Wrapper Sizes */
+.inputWrapper--small {
+  height: 40px;
+}
+
+.inputWrapper--medium {
+  height: 48px;
+}
+
+.inputWrapper--large {
+  height: 56px;
+}
+
+/* Wrapper Theme */
+.inputWrapper--dark {
+  background-color: var(--color-bg-primary, #333333);
+  border-color: var(--color-border-primary, #5f5f5f);
+}
+
+.inputWrapper--dark.inputWrapper--tertiary {
+  background-color: var(--color-bg-secondary, #5f5f5f);
+}
+
+/* Wrapper States */
+.inputWrapper:hover:not(.inputWrapper--disabled) {
+  border-color: var(--color-border-accent, #93beff);
+}
+
+.inputWrapper:focus-within:not(.inputWrapper--disabled) {
+  border-color: var(--color-border-focus, #3a5cf3);
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.1);
+}
+
+.inputWrapper--error {
+  border-color: var(--color-error, #f03851);
+}
+
+.inputWrapper--error:focus-within {
+  box-shadow: 0 0 0 3px rgba(240, 56, 81, 0.1);
+  border-color: var(--color-error, #f03851);
+}
+
+.inputWrapper--success {
+  border-color: var(--color-success, #12b75f);
+}
+
+.inputWrapper--success:focus-within {
+  box-shadow: 0 0 0 3px rgba(18, 183, 95, 0.1);
+  border-color: var(--color-success, #12b75f);
+}
+
+.inputWrapper--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--color-bg-tertiary, #e4e4e4);
+}
+
+.inputWrapper--dark.inputWrapper--disabled {
+  background-color: var(--color-bg-tertiary, #5f5f5f);
+}
+
+/* ============= INPUT ============= */
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-korean, 'Pretendard Variable');
+  font-weight: 500;
+  color: var(--color-text-primary, #1c1c1c);
+  transition: all 0.2s ease;
+}
+
+/* Input Sizes */
+.input--small {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+  padding: 0 12px;
+}
+
+.input--medium {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  padding: 0 16px;
+}
+
+.input--large {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.18px;
+  padding: 0 20px;
+}
+
+/* Input with icons - flexbox 기반으로 변경 */
+.input--with-left-icon {
+  padding-left: 8px;
+}
+
+.input--with-right-element {
+  padding-right: 8px;
+}
+
+/* Input Theme */
+.input--dark {
+  color: var(--color-text-primary, #ffffff);
+}
+
+/* Input Placeholder */
+.input::placeholder {
+  color: var(--color-text-tertiary, #ababab);
+  opacity: 1;
+}
+
+.input--dark::placeholder {
+  color: var(--color-text-tertiary, #c7c7c7);
+}
+
+.input--disabled {
+  cursor: not-allowed;
+}
+
+/* ============= ICONS ============= */
+.leftIcon,
+.rightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #5f5f5f);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.leftIcon {
+  margin-left: 12px;
+  margin-right: -4px;
+}
+
+.rightIcon {
+  margin-right: 12px;
+  margin-left: -4px;
+}
+
+/* Icon sizes */
+.inputWrapper--small .leftIcon,
+.inputWrapper--small .rightIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.inputWrapper--medium .leftIcon,
+.inputWrapper--medium .rightIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.inputWrapper--large .leftIcon,
+.inputWrapper--large .rightIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.inputWrapper--large .leftIcon {
+  margin-left: 16px;
+}
+
+.inputWrapper--large .rightIcon {
+  margin-right: 16px;
+}
+
+/* Icon theme */
+.inputWrapper--dark .leftIcon,
+.inputWrapper--dark .rightIcon {
+  color: var(--color-text-secondary, #e4e4e4);
+}
+
+/* ============= BUTTON ============= */
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font-family-korean, 'Pretendard Variable');
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 8px;
+  margin: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button sizes */
+.inputWrapper--small .button {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+}
+
+.inputWrapper--medium .button {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.inputWrapper--large .button {
+  height: 48px;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #333333;
+}
+
+.button:active:not(:disabled) {
+  background-color: #1c1c1c;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button theme */
+.inputWrapper--dark .button {
+  background-color: var(--color-primary, #3a5cf3);
+  color: #ffffff;
+}
+
+.inputWrapper--dark .button:hover:not(:disabled) {
+  background-color: var(--color-primary-hover, #274ae1);
+}
+
+.inputWrapper--dark .button:active:not(:disabled) {
+  background-color: var(--color-primary-active, #1530a6);
+}
+
+/* ============= HELPER TEXTS ============= */
+.helpText,
+.errorMessage {
+  font-family: var(--font-family-korean, 'Pretendard Variable');
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.12px;
+  margin-top: 4px;
+}
+
+.helpText {
+  color: var(--color-text-secondary, #5f5f5f);
+}
+
+.errorMessage {
+  color: var(--color-error, #f03851);
+}
+
+.container--dark .helpText {
+  color: var(--color-text-secondary, #e4e4e4);
+}
+
+.container--dark .errorMessage {
+  color: var(--color-error, #f4677a);
+}
+
+/* ============= RESPONSIVE DESIGN ============= */
+@media (min-width: 768px) {
+  /* Desktop adjustments if needed */
+  .label {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .helpText,
+  .errorMessage {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+/* ============= HIGH CONTRAST MODE ============= */
+@media (prefers-contrast: high) {
+  .inputWrapper {
+    border-width: 2px;
+  }
+
+  .inputWrapper:focus-within {
+    box-shadow: 0 0 0 4px rgba(58, 92, 243, 0.2);
+  }
+}
+
+/* ============= REDUCED MOTION ============= */
+@media (prefers-reduced-motion: reduce) {
+  .inputWrapper,
+  .input,
+  .button,
+  .leftIcon,
+  .rightIcon {
+    transition: none;
+  }
+}
