@@ -32,7 +32,6 @@
   white-space: nowrap;
   text-decoration: none;
   box-sizing: border-box;
-  position: relative;
   overflow: hidden;
   background-color: transparent;
 }
