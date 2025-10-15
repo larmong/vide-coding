@@ -1,0 +1,240 @@
+/* Base Button Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Icon and Text Layout */
+.icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Size Variants */
+.button--small {
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 64px;
+}
+
+.button--medium {
+  height: 48px;
+  padding: 12px 20px;
+  font-size: 18px;
+  min-width: 110px;
+}
+
+.button--large {
+  height: 56px;
+  padding: 16px 24px;
+  font-size: 20px;
+  min-width: 140px;
+}
+
+/* Primary Variant - Light Theme */
+.button--primary.button--light {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.button--primary.button--light:hover {
+  background-color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button--primary.button--light:active {
+  background-color: #1a1a1a;
+}
+
+/* Primary Variant - Dark Theme */
+.button--primary.button--dark {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid transparent;
+}
+
+.button--primary.button--dark:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.button--primary.button--dark:active {
+  background-color: #e0e0e0;
+}
+
+/* Secondary Variant - Light Theme */
+.button--secondary.button--light {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.button--secondary.button--light:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button--secondary.button--light:active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Secondary Variant - Dark Theme */
+.button--secondary.button--dark {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.button--secondary.button--dark:hover {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.button--secondary.button--dark:active {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+/* Tertiary Variant - Light Theme */
+.button--tertiary.button--light {
+  background-color: transparent;
+  color: #666666;
+  border: 2px solid transparent;
+}
+
+.button--tertiary.button--light:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button--tertiary.button--light:active {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+/* Tertiary Variant - Dark Theme */
+.button--tertiary.button--dark {
+  background-color: transparent;
+  color: #a0a0a0;
+  border: 2px solid transparent;
+}
+
+.button--tertiary.button--dark:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.button--tertiary.button--dark:active {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+/* Disabled State */
+.button--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button--disabled:hover,
+.button--disabled:active,
+.button--disabled:focus {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading State */
+.button--loading {
+  cursor: wait;
+}
+
+.button--loading .text {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .button--small {
+    height: 36px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .button--medium {
+    height: 44px;
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  .button--large {
+    height: 52px;
+    padding: 14px 22px;
+    font-size: 18px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button {
+    border-width: 2px;
+  }
+
+  .button--primary.button--light,
+  .button--primary.button--dark {
+    border-color: currentColor;
+  }
+}
