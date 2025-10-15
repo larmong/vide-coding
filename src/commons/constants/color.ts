@@ -1,270 +1,466 @@
 /**
  * Color Constants for Vibe Coding Project
- *
- * 현대적인 디자인 시스템을 위한 색상 체계
- * Tailwind CSS와 호환되는 색상 팔레트
+ * 
+ * 피그마 파운데이션 노드(1:7593)에서 추출한 실제 색상 데이터 기반
+ * 다크모드 및 라이트모드 모두 지원하는 완전한 색상 토큰 시스템
+ * 
+ * @source Figma Foundation Node: 1:7593
+ * @channel 69rudqh7
+ * @updated 2024.10
  */
 
-// Primary Colors - 메인 브랜드 컬러
+// ============= PRIMARY COLOR SYSTEM (Blue) =============
+// 피그마 Blue 팔레트 - 메인 브랜드 색상
 export const PRIMARY = {
-  50: '#f0f9ff',
-  100: '#e0f2fe',
-  200: '#bae6fd',
-  300: '#7dd3fc',
-  400: '#38bdf8',
-  500: '#0ea5e9',
-  600: '#0284c7',
-  700: '#0369a1',
-  800: '#075985',
-  900: '#0c4a6e',
-  950: '#082f49',
+  5: '#f0f7ff',     // Blue/05
+  10: '#dbeeff',    // Blue/10
+  20: '#bddbff',    // Blue/20
+  30: '#93beff',    // Blue/30
+  40: '#6da5fa',    // Blue/40 - System color
+  50: '#497cff',    // Blue/50
+  60: '#3a5cf3',    // Blue/60 - System color
+  70: '#274ae1',    // Blue/70
+  80: '#1530a6',    // Blue/80
+  90: '#0b2184',    // Blue/90
 } as const;
 
-// Secondary Colors - 보조 컬러
-export const SECONDARY = {
-  50: '#f8fafc',
-  100: '#f1f5f9',
-  200: '#e2e8f0',
-  300: '#cbd5e1',
-  400: '#94a3b8',
-  500: '#64748b',
-  600: '#475569',
-  700: '#334155',
-  800: '#1e293b',
-  900: '#0f172a',
-  950: '#020617',
-} as const;
-
-// Accent Colors - 강조 컬러
-export const ACCENT = {
-  50: '#fefce8',
-  100: '#fef9c3',
-  200: '#fef08a',
-  300: '#fde047',
-  400: '#facc15',
-  500: '#eab308',
-  600: '#ca8a04',
-  700: '#a16207',
-  800: '#854d0e',
-  900: '#713f12',
-  950: '#422006',
-} as const;
-
-// Semantic Colors - 의미적 컬러
-export const SUCCESS = {
-  50: '#f0fdf4',
-  100: '#dcfce7',
-  200: '#bbf7d0',
-  300: '#86efac',
-  400: '#4ade80',
-  500: '#22c55e',
-  600: '#16a34a',
-  700: '#15803d',
-  800: '#166534',
-  900: '#14532d',
-  950: '#052e16',
-} as const;
-
-export const WARNING = {
-  50: '#fffbeb',
-  100: '#fef3c7',
-  200: '#fde68a',
-  300: '#fcd34d',
-  400: '#fbbf24',
-  500: '#f59e0b',
-  600: '#d97706',
-  700: '#b45309',
-  800: '#92400e',
-  900: '#78350f',
-  950: '#451a03',
-} as const;
-
-export const ERROR = {
-  50: '#fef2f2',
-  100: '#fee2e2',
-  200: '#fecaca',
-  300: '#fca5a5',
-  400: '#f87171',
-  500: '#ef4444',
-  600: '#dc2626',
-  700: '#b91c1c',
-  800: '#991b1b',
-  900: '#7f1d1d',
-  950: '#450a0a',
-} as const;
-
-export const INFO = {
-  50: '#eff6ff',
-  100: '#dbeafe',
-  200: '#bfdbfe',
-  300: '#93c5fd',
-  400: '#60a5fa',
-  500: '#3b82f6',
-  600: '#2563eb',
-  700: '#1d4ed8',
-  800: '#1e40af',
-  900: '#1e3a8a',
-  950: '#172554',
-} as const;
-
-// Neutral Colors - 중성 컬러 (텍스트, 배경 등)
+// ============= NEUTRAL SYSTEM (Gray) =============
+// 피그마 Gray 팔레트 - 텍스트, 배경, 경계선 등
 export const NEUTRAL = {
-  50: '#fafafa',
-  100: '#f5f5f5',
-  200: '#e5e5e5',
-  300: '#d4d4d4',
-  400: '#a3a3a3',
-  500: '#737373',
-  600: '#525252',
-  700: '#404040',
-  800: '#262626',
-  900: '#171717',
-  950: '#0a0a0a',
+  0: '#ffffff',     // White
+  5: '#f2f2f2',     // Gray/05
+  10: '#e4e4e4',    // Gray/10
+  20: '#d4d3d3',    // Gray/20
+  30: '#c7c7c7',    // Gray/30
+  40: '#ababab',    // Gray/40
+  50: '#919191',    // Gray/50
+  60: '#777777',    // Gray/60
+  70: '#5f5f5f',    // Gray/70
+  80: '#333333',    // Gray/80
+  90: '#1c1c1c',    // Gray/90
+  100: '#000000',   // Black
 } as const;
 
-// Grayscale - 회색조
-export const GRAY = NEUTRAL;
+// ============= SUCCESS COLOR SYSTEM (Green) =============
+// 피그마 Green 팔레트 - 성공, 완료 상태
+export const SUCCESS = {
+  5: '#d3f3e0',     // Green/05
+  10: '#92e6b9',    // Green/10
+  20: '#15d66f',    // Green/20
+  30: '#12b75f',    // Green/30 - Success color
+  40: '#109c51',    // Green/40
+  50: '#0e723c',    // Green/50
+  60: '#084424',    // Green/60
+} as const;
 
-// Special Colors - 특수 컬러
+// ============= ERROR COLOR SYSTEM (Red) =============
+// 피그마 Red 팔레트 - 오류, 경고 상태
+export const ERROR = {
+  5: '#fdd7dc',     // Red/05
+  10: '#f797a4',    // Red/10
+  20: '#f4677a',    // Red/20
+  30: '#f03851',    // Red/30 - Error color
+  40: '#e4112e',    // Red/40
+  50: '#b40e24',    // Red/50
+  60: '#850a1b',    // Red/60
+} as const;
+
+// ============= WARNING COLOR SYSTEM (Yellow) =============
+// 피그마 Yellow 팔레트 - 주의, 알림 상태
+export const WARNING = {
+  5: '#ffe499',     // Yellow/05
+  10: '#ffd666',    // Yellow/10
+  20: '#ffc933',    // Yellow/20
+  30: '#ffb300',    // Yellow/30
+  40: '#eba500',    // Yellow/40
+  50: '#d69600',    // Yellow/50
+  60: '#b27d00',    // Yellow/60
+} as const;
+
+// ============= COOL GRAY SYSTEM =============
+// 피그마 Cool Gray 팔레트 - UI 요소용 차가운 회색
+export const COOL_GRAY = {
+  1: '#f8f8fa',     // Cool gray/01
+  5: '#f6f6f9',     // Cool gray/05
+  10: '#edeef2',    // Cool gray/10
+  20: '#dddfe5',    // Cool gray/20
+  30: '#d2d4dd',    // Cool gray/30
+  40: '#c7c9d5',    // Cool gray/40
+  50: '#bbbecd',    // Cool gray/50
+  60: '#b0b3c4',    // Cool gray/60
+} as const;
+
+// ============= GRADIENT SYSTEM =============
+// 피그마 그라데이션 색상
+export const GRADIENTS = {
+  primary: {
+    from: '#6da5fa',  // Primary gradient start
+    to: '#92eaf5',    // Primary gradient end
+    css: 'linear-gradient(135deg, #6da5fa 0%, #92eaf5 100%)',
+  },
+  skeleton: {
+    from: 'rgba(255, 255, 255, 0)',
+    middle: 'rgba(255, 255, 255, 0.6)',
+    to: 'rgba(255, 255, 255, 0)',
+    css: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 48.5%, rgba(255, 255, 255, 0) 100%)',
+  },
+} as const;
+
+// ============= SEMANTIC COLOR ALIASES =============
+// 일반적인 디자인 시스템 네이밍으로 매핑
+export const BLUE = PRIMARY;
+export const GRAY = NEUTRAL;
+export const GREEN = SUCCESS;
+export const RED = ERROR;
+export const YELLOW = WARNING;
+
+// ============= SPECIAL COLORS =============
 export const SPECIAL = {
-  white: '#ffffff',
-  black: '#000000',
+  white: NEUTRAL[0],
+  black: NEUTRAL[100],
   transparent: 'transparent',
   current: 'currentColor',
 } as const;
 
-// Gradient Colors - 그라데이션용 컬러
-export const GRADIENT = {
-  primary: {
-    from: PRIMARY[400],
-    to: PRIMARY[600],
-  },
-  secondary: {
-    from: SECONDARY[200],
-    to: SECONDARY[500],
-  },
-  accent: {
-    from: ACCENT[400],
-    to: ACCENT[600],
-  },
-  sunset: {
-    from: '#ff7e5f',
-    to: '#feb47b',
-  },
-  ocean: {
-    from: '#2196f3',
-    to: '#21cbf3',
-  },
-  forest: {
-    from: '#56ab2f',
-    to: '#a8e6cf',
-  },
-} as const;
+// ============= THEME SYSTEM =============
+// 라이트/다크 테마별 색상 매핑
 
-// Theme Colors - 테마별 컬러 (다크/라이트 모드)
 export const THEME = {
   light: {
+    // 배경 색상
     background: {
-      primary: SPECIAL.white,
-      secondary: NEUTRAL[50],
-      tertiary: NEUTRAL[100],
+      primary: NEUTRAL[0],      // #ffffff - 메인 배경
+      secondary: NEUTRAL[5],    // #f2f2f2 - 보조 배경
+      tertiary: NEUTRAL[10],    // #e4e4e4 - 3차 배경
+      elevated: NEUTRAL[0],     // #ffffff - 카드, 모달 등
+      overlay: 'rgba(0, 0, 0, 0.1)', // 오버레이
     },
+    
+    // 텍스트 색상
     text: {
-      primary: NEUTRAL[900],
-      secondary: NEUTRAL[700],
-      tertiary: NEUTRAL[500],
-      inverse: SPECIAL.white,
+      primary: NEUTRAL[90],     // #1c1c1c - 메인 텍스트
+      secondary: NEUTRAL[70],   // #5f5f5f - 보조 텍스트
+      tertiary: NEUTRAL[50],    // #919191 - 3차 텍스트
+      disabled: NEUTRAL[40],    // #ababab - 비활성 텍스트
+      inverse: NEUTRAL[0],      // #ffffff - 역전 텍스트
+      link: PRIMARY[60],        // #3a5cf3 - 링크 색상
     },
+    
+    // 경계선 색상
     border: {
-      primary: NEUTRAL[200],
-      secondary: NEUTRAL[300],
+      primary: NEUTRAL[20],     // #d4d3d3 - 기본 경계선
+      secondary: NEUTRAL[30],   // #c7c7c7 - 보조 경계선
+      accent: PRIMARY[30],      // #93beff - 강조 경계선
+      focus: PRIMARY[60],       // #3a5cf3 - 포커스 경계선
+      error: ERROR[30],         // #f03851 - 오류 경계선
+      success: SUCCESS[30],     // #12b75f - 성공 경계선
+      warning: WARNING[30],     // #ffb300 - 경고 경계선
     },
+    
+    // 표면 색상
     surface: {
-      primary: SPECIAL.white,
-      secondary: NEUTRAL[50],
-      elevated: SPECIAL.white,
+      primary: NEUTRAL[0],      // #ffffff - 기본 표면
+      secondary: NEUTRAL[5],    // #f2f2f2 - 보조 표면
+      elevated: NEUTRAL[0],     // #ffffff - 높은 표면
+      accent: PRIMARY[5],       // #f0f7ff - 강조 표면
+      success: SUCCESS[5],      // #d3f3e0 - 성공 표면
+      error: ERROR[5],          // #fdd7dc - 오류 표면
+      warning: WARNING[5],      // #ffe499 - 경고 표면
     },
   },
+  
   dark: {
+    // 배경 색상 (다크 모드)
     background: {
-      primary: NEUTRAL[900],
-      secondary: NEUTRAL[800],
-      tertiary: NEUTRAL[700],
+      primary: NEUTRAL[90],     // #1c1c1c - 메인 배경
+      secondary: NEUTRAL[80],   // #333333 - 보조 배경
+      tertiary: NEUTRAL[70],    // #5f5f5f - 3차 배경
+      elevated: NEUTRAL[80],    // #333333 - 카드, 모달 등
+      overlay: 'rgba(0, 0, 0, 0.3)', // 오버레이
     },
+    
+    // 텍스트 색상 (다크 모드)
     text: {
-      primary: NEUTRAL[50],
-      secondary: NEUTRAL[200],
-      tertiary: NEUTRAL[400],
-      inverse: NEUTRAL[900],
+      primary: NEUTRAL[0],      // #ffffff - 메인 텍스트
+      secondary: NEUTRAL[10],   // #e4e4e4 - 보조 텍스트
+      tertiary: NEUTRAL[30],    // #c7c7c7 - 3차 텍스트
+      disabled: NEUTRAL[50],    // #919191 - 비활성 텍스트
+      inverse: NEUTRAL[90],     // #1c1c1c - 역전 텍스트
+      link: PRIMARY[40],        // #6da5fa - 링크 색상
     },
+    
+    // 경계선 색상 (다크 모드)
     border: {
-      primary: NEUTRAL[700],
-      secondary: NEUTRAL[600],
+      primary: NEUTRAL[70],     // #5f5f5f - 기본 경계선
+      secondary: NEUTRAL[60],   // #777777 - 보조 경계선
+      accent: PRIMARY[50],      // #497cff - 강조 경계선
+      focus: PRIMARY[40],       // #6da5fa - 포커스 경계선
+      error: ERROR[40],         // #e4112e - 오류 경계선
+      success: SUCCESS[40],     // #109c51 - 성공 경계선
+      warning: WARNING[40],     // #eba500 - 경고 경계선
     },
+    
+    // 표면 색상 (다크 모드)
     surface: {
-      primary: NEUTRAL[800],
-      secondary: NEUTRAL[700],
-      elevated: NEUTRAL[700],
+      primary: NEUTRAL[80],     // #333333 - 기본 표면
+      secondary: NEUTRAL[70],   // #5f5f5f - 보조 표면
+      elevated: NEUTRAL[70],    // #5f5f5f - 높은 표면
+      accent: PRIMARY[90],      // #0b2184 - 강조 표면
+      success: SUCCESS[60],     // #084424 - 성공 표면
+      error: ERROR[60],         // #850a1b - 오류 표면
+      warning: WARNING[60],     // #b27d00 - 경고 표면
     },
   },
 } as const;
 
-// Color Utilities - 컬러 유틸리티 타입
-export type ColorShade = keyof typeof PRIMARY;
-export type ColorVariant = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'error' | 'info';
-export type ThemeMode = 'light' | 'dark';
+// ============= CSS VARIABLES MAPPING =============
+// CSS 변수로 내보낼 색상 매핑 (다크모드 자동 전환)
 
-// Color Functions - 컬러 함수들
+export const CSS_VARIABLES = {
+  light: {
+    // 브랜드 색상
+    '--color-primary-5': PRIMARY[5],
+    '--color-primary-10': PRIMARY[10],
+    '--color-primary-20': PRIMARY[20],
+    '--color-primary-30': PRIMARY[30],
+    '--color-primary-40': PRIMARY[40],
+    '--color-primary-50': PRIMARY[50],
+    '--color-primary-60': PRIMARY[60],
+    '--color-primary-70': PRIMARY[70],
+    '--color-primary-80': PRIMARY[80],
+    '--color-primary-90': PRIMARY[90],
+    '--color-primary': PRIMARY[60],        // 메인 Primary
+    '--color-primary-hover': PRIMARY[70],
+    '--color-primary-active': PRIMARY[80],
+    
+    // 중성 색상
+    '--color-neutral-0': NEUTRAL[0],
+    '--color-neutral-5': NEUTRAL[5],
+    '--color-neutral-10': NEUTRAL[10],
+    '--color-neutral-20': NEUTRAL[20],
+    '--color-neutral-30': NEUTRAL[30],
+    '--color-neutral-40': NEUTRAL[40],
+    '--color-neutral-50': NEUTRAL[50],
+    '--color-neutral-60': NEUTRAL[60],
+    '--color-neutral-70': NEUTRAL[70],
+    '--color-neutral-80': NEUTRAL[80],
+    '--color-neutral-90': NEUTRAL[90],
+    '--color-neutral-100': NEUTRAL[100],
+    
+    // 의미적 색상
+    '--color-success': SUCCESS[30],        // #12b75f
+    '--color-success-light': SUCCESS[5],   // #d3f3e0
+    '--color-success-hover': SUCCESS[40],
+    '--color-success-active': SUCCESS[50],
+    
+    '--color-error': ERROR[30],            // #f03851
+    '--color-error-light': ERROR[5],       // #fdd7dc
+    '--color-error-hover': ERROR[40],
+    '--color-error-active': ERROR[50],
+    
+    '--color-warning': WARNING[30],        // #ffb300
+    '--color-warning-light': WARNING[5],   // #ffe499
+    '--color-warning-hover': WARNING[40],
+    '--color-warning-active': WARNING[50],
+    
+    // 테마 색상 (라이트 모드)
+    '--color-bg-primary': THEME.light.background.primary,
+    '--color-bg-secondary': THEME.light.background.secondary,
+    '--color-bg-tertiary': THEME.light.background.tertiary,
+    '--color-bg-elevated': THEME.light.background.elevated,
+    
+    '--color-text-primary': THEME.light.text.primary,
+    '--color-text-secondary': THEME.light.text.secondary,
+    '--color-text-tertiary': THEME.light.text.tertiary,
+    '--color-text-disabled': THEME.light.text.disabled,
+    '--color-text-inverse': THEME.light.text.inverse,
+    '--color-text-link': THEME.light.text.link,
+    
+    '--color-border-primary': THEME.light.border.primary,
+    '--color-border-secondary': THEME.light.border.secondary,
+    '--color-border-accent': THEME.light.border.accent,
+    '--color-border-focus': THEME.light.border.focus,
+    
+    '--color-surface-primary': THEME.light.surface.primary,
+    '--color-surface-secondary': THEME.light.surface.secondary,
+    '--color-surface-elevated': THEME.light.surface.elevated,
+    '--color-surface-accent': THEME.light.surface.accent,
+    
+    // 그라데이션
+    '--gradient-primary': GRADIENTS.primary.css,
+    '--gradient-skeleton': GRADIENTS.skeleton.css,
+  },
+  
+  dark: {
+    // 브랜드 색상 (다크 모드 - 더 밝은 shade 사용)
+    '--color-primary-5': PRIMARY[5],
+    '--color-primary-10': PRIMARY[10],
+    '--color-primary-20': PRIMARY[20],
+    '--color-primary-30': PRIMARY[30],
+    '--color-primary-40': PRIMARY[40],
+    '--color-primary-50': PRIMARY[50],
+    '--color-primary-60': PRIMARY[60],
+    '--color-primary-70': PRIMARY[70],
+    '--color-primary-80': PRIMARY[80],
+    '--color-primary-90': PRIMARY[90],
+    '--color-primary': PRIMARY[40],        // 다크모드에서 더 밝은 Primary
+    '--color-primary-hover': PRIMARY[30],
+    '--color-primary-active': PRIMARY[20],
+    
+    // 중성 색상
+    '--color-neutral-0': NEUTRAL[0],
+    '--color-neutral-5': NEUTRAL[5],
+    '--color-neutral-10': NEUTRAL[10],
+    '--color-neutral-20': NEUTRAL[20],
+    '--color-neutral-30': NEUTRAL[30],
+    '--color-neutral-40': NEUTRAL[40],
+    '--color-neutral-50': NEUTRAL[50],
+    '--color-neutral-60': NEUTRAL[60],
+    '--color-neutral-70': NEUTRAL[70],
+    '--color-neutral-80': NEUTRAL[80],
+    '--color-neutral-90': NEUTRAL[90],
+    '--color-neutral-100': NEUTRAL[100],
+    
+    // 의미적 색상 (다크 모드)
+    '--color-success': SUCCESS[40],        // #109c51
+    '--color-success-light': SUCCESS[60],  // #084424
+    '--color-success-hover': SUCCESS[30],
+    '--color-success-active': SUCCESS[20],
+    
+    '--color-error': ERROR[40],            // #e4112e
+    '--color-error-light': ERROR[60],      // #850a1b
+    '--color-error-hover': ERROR[30],
+    '--color-error-active': ERROR[20],
+    
+    '--color-warning': WARNING[40],        // #eba500
+    '--color-warning-light': WARNING[60],  // #b27d00
+    '--color-warning-hover': WARNING[30],
+    '--color-warning-active': WARNING[20],
+    
+    // 테마 색상 (다크 모드)
+    '--color-bg-primary': THEME.dark.background.primary,
+    '--color-bg-secondary': THEME.dark.background.secondary,
+    '--color-bg-tertiary': THEME.dark.background.tertiary,
+    '--color-bg-elevated': THEME.dark.background.elevated,
+    
+    '--color-text-primary': THEME.dark.text.primary,
+    '--color-text-secondary': THEME.dark.text.secondary,
+    '--color-text-tertiary': THEME.dark.text.tertiary,
+    '--color-text-disabled': THEME.dark.text.disabled,
+    '--color-text-inverse': THEME.dark.text.inverse,
+    '--color-text-link': THEME.dark.text.link,
+    
+    '--color-border-primary': THEME.dark.border.primary,
+    '--color-border-secondary': THEME.dark.border.secondary,
+    '--color-border-accent': THEME.dark.border.accent,
+    '--color-border-focus': THEME.dark.border.focus,
+    
+    '--color-surface-primary': THEME.dark.surface.primary,
+    '--color-surface-secondary': THEME.dark.surface.secondary,
+    '--color-surface-elevated': THEME.dark.surface.elevated,
+    '--color-surface-accent': THEME.dark.surface.accent,
+    
+    // 그라데이션
+    '--gradient-primary': GRADIENTS.primary.css,
+    '--gradient-skeleton': GRADIENTS.skeleton.css,
+  },
+} as const;
+
+// ============= UTILITY TYPES =============
+export type ColorShade = keyof typeof PRIMARY;
+export type ColorVariant = 'primary' | 'success' | 'error' | 'warning' | 'neutral';
+export type ThemeMode = 'light' | 'dark';
+export type ColorCategory = keyof typeof THEME.light;
+
+// ============= UTILITY FUNCTIONS =============
+
+/**
+ * 색상 팔레트에서 특정 shade 값을 가져옵니다
+ */
 export const getColorValue = (color: typeof PRIMARY, shade: ColorShade): string => {
   return color[shade];
 };
 
-export const getThemeColor = (mode: ThemeMode, category: keyof typeof THEME.light) => {
-  return THEME[mode][category];
+/**
+ * 테마에 따른 색상을 가져옵니다
+ */
+export const getThemeColor = (
+  mode: ThemeMode,
+  category: ColorCategory,
+  property: string
+): string => {
+  const themeColors = THEME[mode][category] as Record<string, string>;
+  return themeColors[property] || '';
 };
 
-// CSS Variables for Dynamic Theming - 동적 테마를 위한 CSS 변수
-export const CSS_VARIABLES = {
-  light: {
-    '--color-primary': PRIMARY[500],
-    '--color-secondary': SECONDARY[500],
-    '--color-accent': ACCENT[500],
-    '--color-success': SUCCESS[500],
-    '--color-warning': WARNING[500],
-    '--color-error': ERROR[500],
-    '--color-info': INFO[500],
-    '--color-background': THEME.light.background.primary,
-    '--color-text': THEME.light.text.primary,
-    '--color-border': THEME.light.border.primary,
-  },
-  dark: {
-    '--color-primary': PRIMARY[400],
-    '--color-secondary': SECONDARY[400],
-    '--color-accent': ACCENT[400],
-    '--color-success': SUCCESS[400],
-    '--color-warning': WARNING[400],
-    '--color-error': ERROR[400],
-    '--color-info': INFO[400],
-    '--color-background': THEME.dark.background.primary,
-    '--color-text': THEME.dark.text.primary,
-    '--color-border': THEME.dark.border.primary,
-  },
-} as const;
+/**
+ * CSS 변수값을 가져옵니다
+ */
+export const getCSSVariable = (mode: ThemeMode, variableName: string): string => {
+  const variables = CSS_VARIABLES[mode] as Record<string, string>;
+  return variables[variableName] || '';
+};
 
-// Export all colors as a single object
+/**
+ * hex 색상에 투명도를 적용합니다 (rgba 형식 반환)
+ */
+export const withOpacity = (hexColor: string, opacity: number): string => {
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  
+  return `rgba(${r}, ${g}, ${b}, ${Math.min(1, Math.max(0, opacity))})`;
+};
+
+/**
+ * 색상 이름으로 적절한 팔레트와 shade를 찾습니다
+ */
+export const getColorByName = (colorName: string, shade: number = 50) => {
+  const colorMap = {
+    primary: PRIMARY,
+    blue: PRIMARY,
+    neutral: NEUTRAL,
+    gray: NEUTRAL,
+    success: SUCCESS,
+    green: SUCCESS,
+    error: ERROR,
+    red: ERROR,
+    warning: WARNING,
+    yellow: WARNING,
+  };
+  
+  const palette = colorMap[colorName.toLowerCase() as keyof typeof colorMap];
+  if (!palette) return null;
+  
+  // 가장 가까운 shade 찾기
+  const availableShades = Object.keys(palette).map(Number).sort((a, b) => a - b);
+  const closestShade = availableShades.reduce((prev, curr) => 
+    Math.abs(curr - shade) < Math.abs(prev - shade) ? curr : prev
+  );
+  
+  return palette[closestShade as keyof typeof palette];
+};
+
+// ============= EXPORT ALL =============
 export const COLORS = {
   PRIMARY,
-  SECONDARY,
-  ACCENT,
-  SUCCESS,
-  WARNING,
-  ERROR,
-  INFO,
   NEUTRAL,
-  GRAY,
-  SPECIAL,
-  GRADIENT,
+  SUCCESS,
+  ERROR,
+  WARNING,
+  COOL_GRAY,
+  GRADIENTS,
   THEME,
+  CSS_VARIABLES,
+  // Aliases
+  BLUE: PRIMARY,
+  GRAY: NEUTRAL,
+  GREEN: SUCCESS,
+  RED: ERROR,
+  YELLOW: WARNING,
+  SPECIAL,
 } as const;
 
+// Default export
 export default COLORS;

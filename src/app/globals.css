@@ -3,121 +3,192 @@
 @tailwind utilities;
 
 :root {
-  /* Legacy Variables */
+  /* Legacy Variables (Next.js 기본) */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c1c1c;
   
-  /* Color Token System - Light Mode */
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
-  --color-primary-950: #082f49;
+  /* ============= FIGMA COLOR TOKENS - LIGHT MODE ============= */
+  /* Primary Colors (Blue) - 피그마 노드 1:7593 */
+  --color-primary-5: #f0f7ff;
+  --color-primary-10: #dbeeff;
+  --color-primary-20: #bddbff;
+  --color-primary-30: #93beff;
+  --color-primary-40: #6da5fa;
+  --color-primary-50: #497cff;
+  --color-primary-60: #3a5cf3;
+  --color-primary-70: #274ae1;
+  --color-primary-80: #1530a6;
+  --color-primary-90: #0b2184;
+  --color-primary: #3a5cf3;         /* System color */
+  --color-primary-hover: #274ae1;
+  --color-primary-active: #1530a6;
   
-  --color-secondary-50: #f8fafc;
-  --color-secondary-100: #f1f5f9;
-  --color-secondary-200: #e2e8f0;
-  --color-secondary-300: #cbd5e1;
-  --color-secondary-400: #94a3b8;
-  --color-secondary-500: #64748b;
-  --color-secondary-600: #475569;
-  --color-secondary-700: #334155;
-  --color-secondary-800: #1e293b;
-  --color-secondary-900: #0f172a;
-  --color-secondary-950: #020617;
+  /* Neutral Colors (Gray) - 피그마 노드 1:7593 */
+  --color-neutral-0: #ffffff;
+  --color-neutral-5: #f2f2f2;
+  --color-neutral-10: #e4e4e4;
+  --color-neutral-20: #d4d3d3;
+  --color-neutral-30: #c7c7c7;
+  --color-neutral-40: #ababab;
+  --color-neutral-50: #919191;
+  --color-neutral-60: #777777;
+  --color-neutral-70: #5f5f5f;
+  --color-neutral-80: #333333;
+  --color-neutral-90: #1c1c1c;
+  --color-neutral-100: #000000;
   
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #22c55e;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
-  --color-success-950: #052e16;
+  /* Success Colors (Green) - 피그마 노드 1:7593 */
+  --color-success-5: #d3f3e0;
+  --color-success-10: #92e6b9;
+  --color-success-20: #15d66f;
+  --color-success-30: #12b75f;
+  --color-success-40: #109c51;
+  --color-success-50: #0e723c;
+  --color-success-60: #084424;
+  --color-success: #12b75f;         /* Success color */
+  --color-success-light: #d3f3e0;
+  --color-success-hover: #109c51;
+  --color-success-active: #0e723c;
   
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-200: #fde68a;
-  --color-warning-300: #fcd34d;
-  --color-warning-400: #fbbf24;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-warning-800: #92400e;
-  --color-warning-900: #78350f;
-  --color-warning-950: #451a03;
+  /* Error Colors (Red) - 피그마 노드 1:7593 */
+  --color-error-5: #fdd7dc;
+  --color-error-10: #f797a4;
+  --color-error-20: #f4677a;
+  --color-error-30: #f03851;
+  --color-error-40: #e4112e;
+  --color-error-50: #b40e24;
+  --color-error-60: #850a1b;
+  --color-error: #f03851;           /* Error color */
+  --color-error-light: #fdd7dc;
+  --color-error-hover: #e4112e;
+  --color-error-active: #b40e24;
   
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ef4444;
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
-  --color-error-950: #450a0a;
+  /* Warning Colors (Yellow) - 피그마 노드 1:7593 */
+  --color-warning-5: #ffe499;
+  --color-warning-10: #ffd666;
+  --color-warning-20: #ffc933;
+  --color-warning-30: #ffb300;
+  --color-warning-40: #eba500;
+  --color-warning-50: #d69600;
+  --color-warning-60: #b27d00;
+  --color-warning: #ffb300;         /* Warning color */
+  --color-warning-light: #ffe499;
+  --color-warning-hover: #eba500;
+  --color-warning-active: #d69600;
   
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0a0a0a;
+  /* Cool Gray Colors - 피그마 노드 1:7593 */
+  --color-cool-gray-1: #f8f8fa;
+  --color-cool-gray-5: #f6f6f9;
+  --color-cool-gray-10: #edeef2;
+  --color-cool-gray-20: #dddfe5;
+  --color-cool-gray-30: #d2d4dd;
+  --color-cool-gray-40: #c7c9d5;
+  --color-cool-gray-50: #bbbecd;
+  --color-cool-gray-60: #b0b3c4;
   
-  /* Semantic Theme Colors - Light Mode */
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #fafafa;
-  --color-background-tertiary: #f5f5f5;
-  --color-text-primary: #171717;
-  --color-text-secondary: #404040;
-  --color-text-tertiary: #737373;
-  --color-text-inverse: #ffffff;
-  --color-border-primary: #e5e5e5;
-  --color-border-secondary: #d4d4d4;
-  --color-surface-primary: #ffffff;
-  --color-surface-secondary: #fafafa;
-  --color-surface-elevated: #ffffff;
+  /* Gradients - 피그마 노드 1:7593 */
+  --gradient-primary: linear-gradient(135deg, #6da5fa 0%, #92eaf5 100%);
+  --gradient-skeleton: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 48.5%, rgba(255, 255, 255, 0) 100%);
+  
+  /* ============= SEMANTIC THEME COLORS - LIGHT MODE ============= */
+  /* Background Colors */
+  --color-bg-primary: #ffffff;      /* Main background */
+  --color-bg-secondary: #f2f2f2;    /* Secondary background */
+  --color-bg-tertiary: #e4e4e4;     /* Tertiary background */
+  --color-bg-elevated: #ffffff;     /* Cards, modals */
+  --color-bg-overlay: rgba(0, 0, 0, 0.1);
+  
+  /* Text Colors */
+  --color-text-primary: #1c1c1c;    /* Main text */
+  --color-text-secondary: #5f5f5f;  /* Secondary text */
+  --color-text-tertiary: #919191;   /* Tertiary text */
+  --color-text-disabled: #ababab;   /* Disabled text */
+  --color-text-inverse: #ffffff;    /* Inverse text */
+  --color-text-link: #3a5cf3;       /* Link color */
+  
+  /* Border Colors */
+  --color-border-primary: #d4d3d3;  /* Default border */
+  --color-border-secondary: #c7c7c7; /* Secondary border */
+  --color-border-accent: #93beff;   /* Accent border */
+  --color-border-focus: #3a5cf3;    /* Focus border */
+  --color-border-error: #f03851;    /* Error border */
+  --color-border-success: #12b75f;  /* Success border */
+  --color-border-warning: #ffb300;  /* Warning border */
+  
+  /* Surface Colors */
+  --color-surface-primary: #ffffff;     /* Default surface */
+  --color-surface-secondary: #f2f2f2;   /* Secondary surface */
+  --color-surface-elevated: #ffffff;    /* Elevated surface */
+  --color-surface-accent: #f0f7ff;      /* Accent surface */
+  --color-surface-success: #d3f3e0;     /* Success surface */
+  --color-surface-error: #fdd7dc;       /* Error surface */
+  --color-surface-warning: #ffe499;     /* Warning surface */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Legacy Variables */
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Legacy Variables (다크 모드) */
+    --background: #1c1c1c;
+    --foreground: #ffffff;
     
-    /* Semantic Theme Colors - Dark Mode */
-    --color-background-primary: #171717;
-    --color-background-secondary: #262626;
-    --color-background-tertiary: #404040;
-    --color-text-primary: #fafafa;
-    --color-text-secondary: #e5e5e5;
-    --color-text-tertiary: #a3a3a3;
-    --color-text-inverse: #171717;
-    --color-border-primary: #404040;
-    --color-border-secondary: #525252;
-    --color-surface-primary: #262626;
-    --color-surface-secondary: #404040;
-    --color-surface-elevated: #404040;
+    /* ============= FIGMA COLOR TOKENS - DARK MODE ============= */
+    /* Primary Colors - 다크 모드에서 더 밝은 shade 사용 */
+    --color-primary: #6da5fa;         /* Brighter primary for dark mode */
+    --color-primary-hover: #93beff;
+    --color-primary-active: #bddbff;
     
-    /* Primary colors remain the same but we can adjust the default usage */
-    --color-primary-default: #38bdf8; /* 400 shade for better contrast in dark mode */
-    --color-secondary-default: #94a3b8; /* 400 shade for better contrast in dark mode */
+    /* Semantic Colors - 다크 모드 */
+    --color-success: #109c51;         /* Darker success */
+    --color-success-light: #084424;   /* Dark success background */
+    --color-success-hover: #12b75f;
+    --color-success-active: #15d66f;
+    
+    --color-error: #e4112e;           /* Darker error */
+    --color-error-light: #850a1b;     /* Dark error background */
+    --color-error-hover: #f03851;
+    --color-error-active: #f4677a;
+    
+    --color-warning: #eba500;         /* Darker warning */
+    --color-warning-light: #b27d00;   /* Dark warning background */
+    --color-warning-hover: #ffb300;
+    --color-warning-active: #ffc933;
+    
+    /* Gradients - 다크 모드 */
+    --gradient-skeleton: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 48.5%, rgba(255, 255, 255, 0) 100%);
+    
+    /* ============= SEMANTIC THEME COLORS - DARK MODE ============= */
+    /* Background Colors */
+    --color-bg-primary: #1c1c1c;      /* Dark main background */
+    --color-bg-secondary: #333333;    /* Dark secondary background */
+    --color-bg-tertiary: #5f5f5f;     /* Dark tertiary background */
+    --color-bg-elevated: #333333;     /* Dark elevated surfaces */
+    --color-bg-overlay: rgba(0, 0, 0, 0.3);
+    
+    /* Text Colors */
+    --color-text-primary: #ffffff;    /* Dark mode main text */
+    --color-text-secondary: #e4e4e4;  /* Dark mode secondary text */
+    --color-text-tertiary: #c7c7c7;   /* Dark mode tertiary text */
+    --color-text-disabled: #919191;   /* Dark mode disabled text */
+    --color-text-inverse: #1c1c1c;    /* Dark mode inverse text */
+    --color-text-link: #6da5fa;       /* Dark mode link color */
+    
+    /* Border Colors */
+    --color-border-primary: #5f5f5f;  /* Dark mode default border */
+    --color-border-secondary: #777777; /* Dark mode secondary border */
+    --color-border-accent: #497cff;   /* Dark mode accent border */
+    --color-border-focus: #6da5fa;    /* Dark mode focus border */
+    --color-border-error: #e4112e;    /* Dark mode error border */
+    --color-border-success: #109c51;  /* Dark mode success border */
+    --color-border-warning: #eba500;  /* Dark mode warning border */
+    
+    /* Surface Colors */
+    --color-surface-primary: #333333;     /* Dark mode default surface */
+    --color-surface-secondary: #5f5f5f;   /* Dark mode secondary surface */
+    --color-surface-elevated: #5f5f5f;    /* Dark mode elevated surface */
+    --color-surface-accent: #0b2184;      /* Dark mode accent surface */
+    --color-surface-success: #084424;     /* Dark mode success surface */
+    --color-surface-error: #850a1b;       /* Dark mode error surface */
+    --color-surface-warning: #b27d00;     /* Dark mode warning surface */
   }
 }
 
@@ -132,30 +203,133 @@ body {
     text-wrap: balance;
   }
   
-  /* Color Token Utility Classes */
-  .bg-primary { background-color: var(--color-primary-500); }
-  .bg-secondary { background-color: var(--color-secondary-500); }
+  /* ============= COLOR TOKEN UTILITY CLASSES ============= */
+  
+  /* Background Utilities */
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-primary-hover { background-color: var(--color-primary-hover); }
+  .bg-primary-active { background-color: var(--color-primary-active); }
+  
+  .bg-success { background-color: var(--color-success); }
+  .bg-success-light { background-color: var(--color-success-light); }
+  .bg-success-hover { background-color: var(--color-success-hover); }
+  
+  .bg-error { background-color: var(--color-error); }
+  .bg-error-light { background-color: var(--color-error-light); }
+  .bg-error-hover { background-color: var(--color-error-hover); }
+  
+  .bg-warning { background-color: var(--color-warning); }
+  .bg-warning-light { background-color: var(--color-warning-light); }
+  .bg-warning-hover { background-color: var(--color-warning-hover); }
+  
+  /* Surface Utilities */
   .bg-surface { background-color: var(--color-surface-primary); }
+  .bg-surface-secondary { background-color: var(--color-surface-secondary); }
   .bg-surface-elevated { background-color: var(--color-surface-elevated); }
+  .bg-surface-accent { background-color: var(--color-surface-accent); }
+  .bg-surface-success { background-color: var(--color-surface-success); }
+  .bg-surface-error { background-color: var(--color-surface-error); }
+  .bg-surface-warning { background-color: var(--color-surface-warning); }
   
-  .text-primary { color: var(--color-text-primary); }
-  .text-secondary { color: var(--color-text-secondary); }
-  .text-tertiary { color: var(--color-text-tertiary); }
-  .text-inverse { color: var(--color-text-inverse); }
+  /* Background Theme Utilities */
+  .bg-theme-primary { background-color: var(--color-bg-primary); }
+  .bg-theme-secondary { background-color: var(--color-bg-secondary); }
+  .bg-theme-tertiary { background-color: var(--color-bg-tertiary); }
+  .bg-theme-elevated { background-color: var(--color-bg-elevated); }
   
-  .border-primary { border-color: var(--color-border-primary); }
-  .border-secondary { border-color: var(--color-border-secondary); }
+  /* Text Utilities */
+  .text-primary-color { color: var(--color-primary); }
+  .text-success-color { color: var(--color-success); }
+  .text-error-color { color: var(--color-error); }
+  .text-warning-color { color: var(--color-warning); }
   
-  .text-success { color: var(--color-success-500); }
-  .text-warning { color: var(--color-warning-500); }
-  .text-error { color: var(--color-error-500); }
+  /* Text Theme Utilities */
+  .text-theme-primary { color: var(--color-text-primary); }
+  .text-theme-secondary { color: var(--color-text-secondary); }
+  .text-theme-tertiary { color: var(--color-text-tertiary); }
+  .text-theme-disabled { color: var(--color-text-disabled); }
+  .text-theme-inverse { color: var(--color-text-inverse); }
+  .text-theme-link { color: var(--color-text-link); }
   
-  .bg-success { background-color: var(--color-success-500); }
-  .bg-warning { background-color: var(--color-warning-500); }
-  .bg-error { background-color: var(--color-error-500); }
+  /* Border Utilities */
+  .border-primary-color { border-color: var(--color-primary); }
+  .border-success-color { border-color: var(--color-success); }
+  .border-error-color { border-color: var(--color-error); }
+  .border-warning-color { border-color: var(--color-warning); }
   
-  /* Light variants */
-  .bg-success-light { background-color: var(--color-success-100); }
-  .bg-warning-light { background-color: var(--color-warning-100); }
-  .bg-error-light { background-color: var(--color-error-100); }
+  /* Border Theme Utilities */
+  .border-theme-primary { border-color: var(--color-border-primary); }
+  .border-theme-secondary { border-color: var(--color-border-secondary); }
+  .border-theme-accent { border-color: var(--color-border-accent); }
+  .border-theme-focus { border-color: var(--color-border-focus); }
+  .border-theme-error { border-color: var(--color-border-error); }
+  .border-theme-success { border-color: var(--color-border-success); }
+  .border-theme-warning { border-color: var(--color-border-warning); }
+  
+  /* Gradient Utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-skeleton {
+    background: var(--gradient-skeleton);
+  }
+  
+  /* Focus Utilities */
+  .focus-ring {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+  
+  .focus-ring-error {
+    outline: 2px solid var(--color-border-error);
+    outline-offset: 2px;
+  }
+  
+  .focus-ring-success {
+    outline: 2px solid var(--color-border-success);
+    outline-offset: 2px;
+  }
+  
+  /* State Utilities */
+  .hover\:bg-primary-hover:hover {
+    background-color: var(--color-primary-hover);
+  }
+  
+  .hover\:bg-success-hover:hover {
+    background-color: var(--color-success-hover);
+  }
+  
+  .hover\:bg-error-hover:hover {
+    background-color: var(--color-error-hover);
+  }
+  
+  .hover\:bg-warning-hover:hover {
+    background-color: var(--color-warning-hover);
+  }
+  
+  .active\:bg-primary-active:active {
+    background-color: var(--color-primary-active);
+  }
+  
+  /* Neutral Color Utilities */
+  .bg-neutral-0 { background-color: var(--color-neutral-0); }
+  .bg-neutral-5 { background-color: var(--color-neutral-5); }
+  .bg-neutral-10 { background-color: var(--color-neutral-10); }
+  .bg-neutral-20 { background-color: var(--color-neutral-20); }
+  .bg-neutral-30 { background-color: var(--color-neutral-30); }
+  .bg-neutral-40 { background-color: var(--color-neutral-40); }
+  .bg-neutral-50 { background-color: var(--color-neutral-50); }
+  .bg-neutral-60 { background-color: var(--color-neutral-60); }
+  .bg-neutral-70 { background-color: var(--color-neutral-70); }
+  .bg-neutral-80 { background-color: var(--color-neutral-80); }
+  .bg-neutral-90 { background-color: var(--color-neutral-90); }
+  .bg-neutral-100 { background-color: var(--color-neutral-100); }
+  
+  .text-neutral-0 { color: var(--color-neutral-0); }
+  .text-neutral-60 { color: var(--color-neutral-60); }
+  .text-neutral-70 { color: var(--color-neutral-70); }
+  .text-neutral-80 { color: var(--color-neutral-80); }
+  .text-neutral-90 { color: var(--color-neutral-90); }
+  .text-neutral-100 { color: var(--color-neutral-100); }
 }
