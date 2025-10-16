@@ -1,0 +1,221 @@
+/* ============= BASE TOGGLE STYLES ============= */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  border-radius: 100px;
+  outline: none;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.toggle:focus-visible {
+  box-shadow: 0 0 0 2px rgba(58, 92, 243, 0.3);
+  outline: 2px solid transparent;
+}
+
+.toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ============= THUMB STYLES ============= */
+.thumb {
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.thumb--disabled {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ============= TOGGLE STATES ============= */
+.toggle--checked {
+  justify-content: flex-end;
+}
+
+/* ============= SIZE VARIANTS ============= */
+
+/* Small Size - 44x24px */
+.toggle--small {
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+}
+
+.thumb--small {
+  width: 20px;
+  height: 20px;
+}
+
+/* Medium Size - 58x32px (Default from Figma) */
+.toggle--medium {
+  width: 58px;
+  height: 32px;
+  padding: 4px;
+}
+
+.thumb--medium {
+  width: 24px;
+  height: 24px;
+}
+
+/* Large Size - 72x40px */
+.toggle--large {
+  width: 72px;
+  height: 40px;
+  padding: 4px;
+}
+
+.thumb--large {
+  width: 32px;
+  height: 32px;
+}
+
+/* ============= VARIANT STYLES - LIGHT THEME ============= */
+
+/* Primary Variant - Light */
+.toggle--primary.toggle--light {
+  background-color: #e4e4e4; /* NEUTRAL[10] - OFF state */
+}
+
+.toggle--primary.toggle--light.toggle--checked {
+  background-color: #15d66f; /* SUCCESS[20] - ON state */
+}
+
+.toggle--primary.toggle--light:hover:not(.toggle--disabled) {
+  background-color: #d4d3d3; /* NEUTRAL[20] */
+}
+
+.toggle--primary.toggle--light.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #12b75f; /* SUCCESS[30] */
+}
+
+/* Secondary Variant - Light */
+.toggle--secondary.toggle--light {
+  background-color: #c7c7c7; /* NEUTRAL[30] - OFF state */
+}
+
+.toggle--secondary.toggle--light.toggle--checked {
+  background-color: #6da5fa; /* PRIMARY[40] - ON state */
+}
+
+.toggle--secondary.toggle--light:hover:not(.toggle--disabled) {
+  background-color: #ababab; /* NEUTRAL[40] */
+}
+
+.toggle--secondary.toggle--light.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #497cff; /* PRIMARY[50] */
+}
+
+/* Tertiary Variant - Light */
+.toggle--tertiary.toggle--light {
+  background-color: #bddbff; /* PRIMARY[20] - OFF state */
+}
+
+.toggle--tertiary.toggle--light.toggle--checked {
+  background-color: #3a5cf3; /* PRIMARY[60] - ON state */
+}
+
+.toggle--tertiary.toggle--light:hover:not(.toggle--disabled) {
+  background-color: #93beff; /* PRIMARY[30] */
+}
+
+.toggle--tertiary.toggle--light.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #274ae1; /* PRIMARY[70] */
+}
+
+/* ============= VARIANT STYLES - DARK THEME ============= */
+
+/* Primary Variant - Dark */
+.toggle--primary.toggle--dark {
+  background-color: #777777; /* NEUTRAL[60] - OFF state */
+}
+
+.toggle--primary.toggle--dark.toggle--checked {
+  background-color: #12b75f; /* SUCCESS[30] - ON state */
+}
+
+.toggle--primary.toggle--dark:hover:not(.toggle--disabled) {
+  background-color: #5f5f5f; /* NEUTRAL[70] */
+}
+
+.toggle--primary.toggle--dark.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #109c51; /* SUCCESS[40] */
+}
+
+/* Secondary Variant - Dark */
+.toggle--secondary.toggle--dark {
+  background-color: #919191; /* NEUTRAL[50] - OFF state */
+}
+
+.toggle--secondary.toggle--dark.toggle--checked {
+  background-color: #6da5fa; /* PRIMARY[40] - ON state */
+}
+
+.toggle--secondary.toggle--dark:hover:not(.toggle--disabled) {
+  background-color: #777777; /* NEUTRAL[60] */
+}
+
+.toggle--secondary.toggle--dark.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #93beff; /* PRIMARY[30] */
+}
+
+/* Tertiary Variant - Dark */
+.toggle--tertiary.toggle--dark {
+  background-color: #274ae1; /* PRIMARY[70] - OFF state */
+}
+
+.toggle--tertiary.toggle--dark.toggle--checked {
+  background-color: #497cff; /* PRIMARY[50] - ON state */
+}
+
+.toggle--tertiary.toggle--dark:hover:not(.toggle--disabled) {
+  background-color: #1530a6; /* PRIMARY[80] */
+}
+
+.toggle--tertiary.toggle--dark.toggle--checked:hover:not(.toggle--disabled) {
+  background-color: #6da5fa; /* PRIMARY[40] */
+}
+
+/* ============= FOCUS STYLES ============= */
+.toggle--light:focus-visible {
+  box-shadow: 0 0 0 2px rgba(58, 92, 243, 0.3);
+}
+
+.toggle--dark:focus-visible {
+  box-shadow: 0 0 0 2px rgba(109, 165, 250, 0.4);
+}
+
+/* ============= ACCESSIBILITY ============= */
+
+/* ============= HIGH CONTRAST MODE ============= */
+@media (prefers-contrast: high) {
+  .toggle {
+    border: 2px solid;
+  }
+  
+  .toggle--light {
+    border-color: #000000;
+  }
+  
+  .toggle--dark {
+    border-color: #ffffff;
+  }
+  
+  .thumb {
+    border: 1px solid;
+  }
+  
+  .toggle--light .thumb {
+    border-color: #000000;
+  }
+  
+  .toggle--dark .thumb {
+    border-color: #ffffff;
+  }
+}
