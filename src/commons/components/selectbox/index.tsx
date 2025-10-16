@@ -255,7 +255,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
 
         {isOpen && (
           <ul className={styles.optionsList} role="listbox" aria-multiselectable="false">
-            {options.map((option, index) => (
+            {options.map((option) => (
               <li
                 key={option.value}
                 className={[
