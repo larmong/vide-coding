@@ -318,7 +318,12 @@ const StatesComponent = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'center' }}>
       <div style={{ width: '400px' }}>
         <h4 style={{ marginBottom: '12px', textAlign: 'center' }}>Normal</h4>
-        <SearchBar variant="primary" value={normal} onChange={(e) => setNormal(e.target.value)} onClear={() => setNormal('')} />
+        <SearchBar
+          variant="primary"
+          value={normal}
+          onChange={(e) => setNormal(e.target.value)}
+          onClear={() => setNormal('')}
+        />
       </div>
       <div style={{ width: '400px' }}>
         <h4 style={{ marginBottom: '12px', textAlign: 'center' }}>With Value</h4>
@@ -823,4 +828,3 @@ export const Playground: Story = {
   },
   render: (args) => <SearchBarWrapper {...args} />,
 };
-
