@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './styles.module.css';
 
 export interface Option {
@@ -243,15 +244,13 @@ const SelectBox: React.FC<SelectBoxProps> = ({
         >
           <span className={styles.selectedText}>{displayText}</span>
 
-          <svg className={styles.dropdownIcon} width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M7 10L12 15L17 10"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Image
+            src="/icons/arrow_drop_down.svg"
+            alt="dropdown arrow"
+            width={24}
+            height={24}
+            className={styles.dropdownIcon}
+          />
         </div>
 
         {isOpen && (

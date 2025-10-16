@@ -198,23 +198,23 @@
   .toggle {
     border: 2px solid;
   }
-  
+
   .toggle--light {
     border-color: #000000;
   }
-  
+
   .toggle--dark {
     border-color: #ffffff;
   }
-  
+
   .thumb {
     border: 1px solid;
   }
-  
+
   .toggle--light .thumb {
     border-color: #000000;
   }
-  
+
   .toggle--dark .thumb {
     border-color: #ffffff;
   }

@@ -18,8 +18,8 @@
 }
 
 .selectWrapper {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -39,7 +39,6 @@
   transition: all 0.2s ease-in-out;
   user-select: none;
   box-sizing: border-box;
-  position: relative;
   outline: none;
 }
 
@@ -229,21 +228,23 @@
 
 /* State Variants */
 .select--error {
-  border-color: #f03851 !important;
+  border-color: #f03851;
   color: #f03851;
 }
 
 .select--error:focus {
-  box-shadow: 0 0 0 2px rgba(240, 56, 81, 0.2) !important;
+  border-color: #f03851;
+  box-shadow: 0 0 0 2px rgba(240, 56, 81, 0.2);
 }
 
 .select--success {
-  border-color: #12b75f !important;
+  border-color: #12b75f;
   color: #12b75f;
 }
 
 .select--success:focus {
-  box-shadow: 0 0 0 2px rgba(18, 183, 95, 0.2) !important;
+  border-color: #12b75f;
+  box-shadow: 0 0 0 2px rgba(18, 183, 95, 0.2);
 }
 
 .select--disabled {
@@ -261,11 +262,9 @@
 
 /* Options List */
 .optionsList {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   background-color: #ffffff;
   border: 1px solid #d4d3d3;
   border-radius: 8px;
